@@ -1,0 +1,117 @@
+# Demonstration configuration: no real identities or service data.
+# Copy locally to config/config.yaml or run npm run demo:setup.
+bot_token: ""
+staffchat_id: ""
+owner_id: ""
+owner_ids: []
+spam_time: 300000
+spam_cant_msg: 5
+parse_mode: "none"
+allow_private: true
+direct_reply: false
+auto_close_tickets: false
+anonymous_tickets: true
+anonymous_replies: true
+show_auto_replied: false
+show_user_ticket: false
+autoreply_confirmation: false
+clean_replies: true
+pass_start: false
+dev_mode: false
+categories: []
+autoreply: []
+language:
+  startCommandText: "Здравствуйте! Опишите вопрос, и мы поможем."
+  faqCommandText: "Задайте вопрос в этом чате."
+  helpCommandText: "/start /help /id"
+  helpCommandStaffText: "/panel /open /close /id"
+  confirmationMessage: "Обращение принято."
+  blockedSpam: "Слишком много сообщений. Пожалуйста, подождите."
+  ticket: "Тикет"
+  closed: "закрыт"
+  acceptedBy: "принят"
+  dear: "Здравствуйте,"
+  regards: "С уважением,"
+  from: "от"
+  language: "Язык"
+  msg_sent: "Сообщение отправлено"
+  file_sent: "Файл отправлен"
+  usr_with_ticket: "Пользователь"
+  banned: "заблокирован"
+  replyPrivate: "Ответить лично"
+  services: "Выберите категорию"
+  customer: "клиент"
+  msgForwarding: "Сообщения направлены в поддержку"
+  back: "Назад"
+  whatSubCategory: "Выберите подкатегорию"
+  prvChatEnded: "Личный диалог завершён"
+  prvChatOpened: "Личный диалог открыт"
+  prvChatEnd: "Завершить диалог"
+  prvChatOpenedCustomer: "Оператор подключился"
+  instructionsSent: "Инструкция отправлена"
+  openTickets: "Открытые обращения"
+  ticketClosed: "Обращение закрыто"
+  ticketClosedError: "Обращение уже закрыто"
+  automatedReply: "Автоответ"
+  automatedReplyAuthor: "Поддержка"
+  regardsGroup: "Команда поддержки"
+support:
+  custom_emoji: false
+  mirror_ai_dialogs: true
+  ai_inactivity_close_ms: 86400000
+  metadata_retention_days: 30
+  maintenance_interval_ms: 3600000
+  health_host: "127.0.0.1"
+  health_port: 3001
+ai:
+  enabled: true
+  mode: "off"
+  ai_rollout_percent: 0
+  web_tool_rollout_percent: 0
+  staff_allowlist: []
+  system_prompt: "Вы — ассистент поддержки. Отвечайте только по предоставленным фактам. При недостатке данных задайте уточняющий вопрос или передайте обращение оператору. Не выдумывайте цены, функции, сроки или действия с аккаунтом. Для поискового режима укажите источники в первой строке [SOURCES: id1, id2]. Если нужен оператор, верните [NEEDS_HUMAN]."
+  max_history_messages: 8
+  user_parse_mode: "none"
+  llm:
+    max_input_tokens: 32768
+    deadline_ms: 30000
+    max_attempts: 3
+    providers:
+      primary:
+        provider: "mistral"
+        model: "mistral-small-2603"
+        temperature: 0
+        max_tokens: 300
+        timeout_ms: 9000
+        daily_request_limit: 100
+      fallback:
+        provider: "gemini"
+        model: "gemini-3.1-flash-lite"
+        max_tokens: 300
+        timeout_ms: 9000
+        daily_request_limit: 100
+  embeddings:
+    enabled: false
+    provider: "mistral"
+    model: "mistral-embed"
+    dimensions: 1024
+    timeout_ms: 10000
+  rag:
+    enabled: true
+    vector_db: "qdrant"
+    qdrant:
+      url: "http://localhost:6333"
+      collection: "support_kb_active"
+      max_context_docs: 4
+  handoff:
+    on_no_context: true
+    on_low_confidence: true
+    keywords: ["оператор", "человек", "human", "operator"]
+    user_message: "Вопрос передан специалисту."
+    user_message_staff_stop: "Оператор подключился к диалогу."
+    staff_message: "Требуется оператор"
+  tools:
+    verified_docs:
+      enabled: false
+      cache_path: "./config/.verified-docs-cache.json"
+      sync_interval_ms: 21600000

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "account-access",
+    "question": "Подскажите порядок авторизации",
+    "expected_action": "reply",
+    "expected_title": "Вход в аккаунт"
+  },
+  {
+    "id": "password-access",
+    "question": "Не помню пароль от аккаунта",
+    "expected_action": "reply",
+    "expected_title": "Восстановление пароля"
+  },
+  {
+    "id": "invoice",
+    "question": "Нужен документ о платеже",
+    "expected_action": "reply",
+    "expected_title": "Счёт на оплату"
+  },
+  {
+    "id": "unrelated",
+    "question": "Какая завтра погода?",
+    "expected_action": "handoff",
+    "expected_title": null
+  }
+]

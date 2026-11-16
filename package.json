@@ -1,0 +1,94 @@
+{
+  "name": "support-ticket-bot-portfolio",
+  "version": "1.0.0",
+  "description": "Telegram support workflow with AI assistance, operator handoff and testable integrations",
+  "license": "GPL-3.0",
+  "author": "Vladimir Pechenov",
+  "homepage": "https://github.com/VladimirPechenov/support_ticket_bot",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VladimirPechenov/support_ticket_bot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/VladimirPechenov/support_ticket_bot/issues"
+  },
+  "main": "build/index.js",
+  "scripts": {
+    "tsc": "tsc",
+    "dev": "node --no-experimental-strip-types --env-file-if-exists=.env -r ts-node/register src/index.ts",
+    "prod": "node --env-file-if-exists=.env build/index.js",
+    "build": "tsc",
+    "lint": "eslint 'src/**/*.ts'",
+    "test:ai": "node scripts/run-tests.js ai-client.test.ts",
+    "test": "node scripts/run-tests.js",
+    "config:check": "node --env-file-if-exists=.env scripts/config-preflight.js",
+    "config:check:release": "node --env-file-if-exists=.env scripts/config-preflight.js --require-ai-keys",
+    "rag:eval": "node --env-file-if-exists=.env scripts/evaluate-rag.js",
+    "providers:smoke": "node --env-file-if-exists=.env scripts/provider-smoke.js",
+    "docs:sync": "node build/verified-docs-cli.js",
+    "check": "tsc --noEmit",
+    "demo:setup": "node scripts/setup-demo.js",
+    "verify:public": "node scripts/verify-public-files.js"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "dependencies": {
+    "@grammyjs/transformer-throttler": "^1.2.1",
+    "@langchain/core": "1.2.3",
+    "@langchain/google": "0.2.1",
+    "@langchain/langgraph": "1.4.8",
+    "@langchain/mistralai": "1.2.0",
+    "@mistralai/mistralai": "2.2.1",
+    "better-sqlite3": "^12.6.2",
+    "grammy": "^1.12.0",
+    "langchain": "1.5.3",
+    "node-fetch": "2.7.0",
+    "socks-proxy-agent": "8.0.5",
+    "yaml": "^2.8.3",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.3.4",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "20.19.43",
+    "@types/node-fetch": "^2.6.13",
+    "@typescript-eslint/eslint-plugin": "^5.47.0",
+    "@typescript-eslint/parser": "^5.47.0",
+    "chai": "^4.3.7",
+    "eslint": "^8.30.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-standard": "^4.1.0",
+    "esm": "^3.2.25",
+    "mocha": "12.0.3",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "5.9.3"
+  },
+  "keywords": [
+    "telegram-support-bot",
+    "support",
+    "telegraf",
+    "telegram",
+    "ticket",
+    "ticketing",
+    "ticketing system",
+    "telegram bot api",
+    "bot",
+    "botapi",
+    "bot framework"
+  ],
+  "contributors": [
+    "bostrot and telegram-support-bot contributors (upstream base)"
+  ],
+  "overrides": {
+    "mocha": {
+      "glob": "14.0.6",
+      "minimatch": "11.0.8"
+    }
+  }
+}

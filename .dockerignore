@@ -1,0 +1,9 @@
+.git
+node_modules
+build
+.env
+config/*
+!config/config.example.yaml
+logs
+.tmp
+test

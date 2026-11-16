@@ -1,0 +1,22 @@
+{
+  "update": {
+    "update_id": 1,
+    "message": {
+      "message_id": 1,
+      "date": 1700000000,
+      "from": {
+        "id": 101,
+        "is_bot": false,
+        "first_name": "Test",
+        "language_code": "en"
+      },
+      "chat": {
+        "id": 101,
+        "type": "private",
+        "first_name": "Test"
+      },
+      "text": "Test message"
+    }
+  },
+  "session": {}
+}

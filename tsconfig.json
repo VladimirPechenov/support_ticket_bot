@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "outDir": "./build",
+    "allowJs": true,
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM"],
+    "module": "Node16",
+    "sourceMap": true,
+    "moduleResolution": "Node16",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "strictNullChecks" : false,
+  },
+  "include": [
+    "./src/**/**/*"
+  ]
+}

@@ -1,0 +1,8 @@
+Portfolio adaptation by Vladimir Pechenov.
+Based on bostrot/telegram-support-bot v4.1.1:
+https://github.com/bostrot/telegram-support-bot/tree/v4.1.1
+
+The upstream copyright notices and GPL-3.0 license are retained.
+The AI orchestration, retrieval, operator workflow and associated tests have
+been extended from the upstream base. This is not a claim to have authored
+the original Telegram support bot from scratch.
